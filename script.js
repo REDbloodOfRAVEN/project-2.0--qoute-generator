@@ -7,20 +7,20 @@ const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
 
 //Show loading 
-function loading() {
+function showLoading() {     /*loading() {*/
     loader.hidden = false;
     quoteContainer.hidden = true;
 }
 
 //Hide loading
-function complete() {
+function hideLoading() {     /*complete() {*/
     quoteContainer.hidden = false;
     loader.hidden = true;
 }
 
 //Show New Quote function
-function newQuote() { 
-    loading();
+function ShowNewQuote() {     /*newQuote() { */
+    showLoading();            /*loading();*/
 
     //Pick random quote from apiQuotes array
     const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
@@ -40,7 +40,7 @@ function newQuote() {
     }
     
     //Set Quote, Hide Loader
-    complete();
+    hideLoading();         //complete();
 
     quoteText.textContent = quote.text;
 
@@ -54,7 +54,7 @@ function tweetQuote() {
 }
 
 // Event Listeners
-newQuoteBtn.addEventListener('click', newQuote);
+newQuoteBtn.addEventListener('click', ShowNewQuote); //newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
 
 //on Load
