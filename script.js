@@ -27,13 +27,15 @@ function displayPhotos() {
         href: photo.links.html,
         target: '_blank',
     });
+
     //create image for photo
     const img = document.createElement("img");
     setAttributes(img, {
         src: photo.urls.regular,
         alt: photo.alt_description,
         title: photo.alt_description,
-    })
+    });
+    
     //put img inside <a>, put <a> inside imageContainer Element
     item.appendChild(img);
     imageContainer.appendChild(item);
